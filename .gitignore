@@ -1,0 +1,17 @@
+# Cache
+__pycache__/
+.pytest_cache/
+.cache
+
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+
+# IDE
+.idea
+.vscode/
