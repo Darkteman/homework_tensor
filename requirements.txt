@@ -8,6 +8,7 @@ idna==3.4
 iniconfig==2.0.0
 outcome==1.2.0
 packaging==23.1
+Pillow==9.5.0
 pluggy==1.0.0
 PySocks==1.7.1
 pytest==7.3.1

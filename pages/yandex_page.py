@@ -15,14 +15,15 @@ class YandexPage(BasePage):
         return name_category in text_search_field
 
     def download_image(self, image, filename):
+        time.sleep(1)
         image_src = image.get_attribute('src')
         print(image_src)
         response = requests.get(image_src)
         with open(filename, 'wb') as img_file:
             img_file.write(response.content)
 
-    def get_image_code(self, image):
-        image_src = image.get_attribute('src')
-        code_image = requests.get(image_src).content
-        self.driver.implicitly_wait(10)
-        return code_image
+    # def get_image_code(self, image):
+    #     image_src = image.get_attribute('src')
+    #     code_image = requests.get(image_src).content
+    #     self.driver.implicitly_wait(10)
+    #     return code_image

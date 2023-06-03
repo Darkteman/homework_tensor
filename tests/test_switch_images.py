@@ -2,6 +2,7 @@ import time
 from pages.yandex_page import YandexPage
 from locators.yandex_page_locators import Locators
 from selenium.webdriver import ActionChains
+from services.utils import are_images_identical
 
 
 YANDEX_IMAGE_SITE = 'https://yandex.ru/images/'
@@ -29,19 +30,18 @@ def test_switch_images(driver):
     page.get_visible_object(Locators.FIRST_IMAGE).click()
     image = page.get_visible_object(Locators.IMAGE)
     assert image, 'Первая картинка не открылась!'
-    code_first_image = page.get_image_code(image)
     page.download_image(image, 'image_1.png')
 
     ActionChains(page.driver).move_to_element(image).perform()
     page.get_visible_object(Locators.NEXT_BUTTON).click()
     image = page.get_visible_object(Locators.IMAGE)
-    code_second_image = page.get_image_code(image)
     page.download_image(image, 'image_2.png')
-    assert code_first_image != code_second_image, 'Картинка не сменилась!'
+    comparison_result = are_images_identical('image_1.png', 'image_2.png')
+    assert comparison_result is False, 'Картинка не сменилась!'
 
     page.get_visible_object(Locators.PREV_BUTTON).click()
     image = page.get_visible_object(Locators.IMAGE)
-    code_third_image = page.get_image_code(image)
     page.download_image(image, 'image_3.png')
-    assert code_first_image == code_third_image, ('При возврате назад картинка'
-                                                  'отличается от изначальной!')
+    comparison_result = are_images_identical('image_1.png', 'image_3.png')
+    assert comparison_result, ('При возврате назад картинка'
+                               'отличается от изначальной!')

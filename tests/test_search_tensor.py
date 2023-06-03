@@ -8,7 +8,7 @@ TENSOR_SITE = 'https://tensor.ru/'
 TENSOR_INPUT = 'Тензор'
 
 
-def search_tensor(driver):
+def test_search_tensor(driver):
     page = YandexPage(driver)
     time.sleep(20)
 
