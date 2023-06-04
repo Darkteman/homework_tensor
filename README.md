@@ -7,7 +7,7 @@
 [![Loguru](https://img.shields.io/badge/-Loguru-464646?style=flat&logo=Loguru&logoColor=56C0C0&color=008080)](https://loguru.readthedocs.io/en/stable/api/logger.html)
 
 Проект состоит из 2ух заданий по автоматизации тестирования.  
-В работе использовался Python 3.10 в совокупности с Selenuim WebDriver. 
+В работе использовался Python 3.10 в совокупности с Selenuim WebDriver.   
 Тесты написаны с помощью pytest, логирование осуществляется через библиотеку loguru.  
 В проекте реализован паттерн проектирования - Page Object Model (POM).  
 
