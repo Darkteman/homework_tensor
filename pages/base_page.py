@@ -1,7 +1,9 @@
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from services.logging.log_conf import logger
 from services.text_messages import msg
 
@@ -36,6 +38,18 @@ class BasePage:
                          f'"{locator[LOCATOR_NAME_INDEX]}"!')
             logger.error(msg_error)
             raise TimeoutException(msg_error)
+
+    def press_enter(self, object):
+        """
+        Нажимает клавишу Enter при нахождении на заданном объекте.
+        """
+        object.send_keys(Keys.ENTER)
+
+    def input_data_in_field(self, data, field):
+        """
+        Вводит данные в переданное поле.
+        """
+        field.send_keys(data)
 
     def get_url_last_page(self):
         """

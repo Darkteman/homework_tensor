@@ -1,8 +1,8 @@
-from pages.yandex_page import YandexPage
 from locators.yandex_page_locators import Locators
-from services.utils import are_images_identical
-from services.text_messages import msg
+from pages.yandex_page import YandexPage
 from services.logging.log_conf import logger
+from services.text_messages import msg
+from services.utils import are_images_identical
 
 YANDEX_IMAGE_SITE = 'https://yandex.ru/images/'
 

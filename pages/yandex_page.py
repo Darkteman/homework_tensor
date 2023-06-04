@@ -1,7 +1,9 @@
-from pages.base_page import BasePage
-from locators.yandex_page_locators import Locators
 import time
+
 import requests
+
+from locators.yandex_page_locators import Locators
+from pages.base_page import BasePage
 
 LAG_TIME_ON_IMAGE_LOAD = 1
 

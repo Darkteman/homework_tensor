@@ -1,6 +1,5 @@
-from pages.yandex_page import YandexPage
 from locators.yandex_page_locators import Locators
-from selenium.webdriver.common.keys import Keys
+from pages.yandex_page import YandexPage
 from services.logging.log_conf import logger
 from services.text_messages import msg
 
@@ -19,11 +18,11 @@ def test_search_tensor(driver):
     search_field = page.get_visible_object(Locators.SEARCH_FIELD)
     logger.info(msg['search_field_succ'])
 
-    search_field.send_keys(TENSOR_INPUT)
+    page.input_data_in_field(TENSOR_INPUT, search_field)
     page.get_visible_object(Locators.SUGGEST_LIST)
     logger.info(msg['suggest_list_succ'])
 
-    search_field.send_keys(Keys.ENTER)
+    page.press_enter(search_field)
     page.get_visible_object(Locators.SEARCH_RESULT)
     logger.info(msg['search_result_succ'])
 
