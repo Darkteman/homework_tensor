@@ -6,8 +6,8 @@
 [![Pytest](https://img.shields.io/badge/-Pytest-464646?style=flat&logo=Pytestk&logoColor=56C0C0&color=008080)](https://docs.pytest.org/en/7.3.x/)
 [![Loguru](https://img.shields.io/badge/-Loguru-464646?style=flat&logo=Loguru&logoColor=56C0C0&color=008080)](https://loguru.readthedocs.io/en/stable/api/logger.html)
 
-Проект состоит из 2ух заданий по автоматизации тестирования.  
-В работе использовался Python 3.10 в совокупности с Selenuim WebDriver.   
+Проект состоит из 2-х заданий по автоматизации тестирования.  
+В работе использовался Python 3.10 в совокупности с Selenium WebDriver.   
 Тесты написаны с помощью pytest, логирование осуществляется через библиотеку loguru.  
 В проекте реализован паттерн проектирования - Page Object Model (POM).  
 При запуске автотестов использовался веб-браузер Chrome и операционная система Ubuntu 22.04.    
